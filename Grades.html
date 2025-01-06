@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            border: 2px solid #FF8C00;
+            border-radius: 12px;
+            background-color: #B0C4DE;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            background-color: white;
+        }
+        table, th, td {
+            border: 2px solid white;
+            border-radius: 12px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 2px solid #FF8C00;
+        }
+        th {
+            background-color: #191970;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #191970;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .back-button:hover {
+            background-color: #B0C4DE; 
+            transform: scale(1.03); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .gpa {
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .search-bar {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: 2px solid #FF8C00;
+        border-radius: 25px;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar input:focus {
+        border-color: #FF7F00;
+        box-shadow: 0 0 10px rgba(255, 127, 0, 0.5);
+    }
+
+    .search-bar input::placeholder {
+        color: #888;
+    }
+
+    .search-bar input[type="text"] {
+        padding-left: 35px; 
+    }
+
+    .search-bar .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 18px;
+        color: #FF8C00;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color:#191970">Final Grades</h1>
+       <div class="search-bar">
+    <span class="search-icon">&#128269;</span> 
+    <input type="text" placeholder="Search for subjects...">
+</div>
+    </header>
+
+    <main>
+        <table class="subjects-table">
+            <thead>
+                <tr>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Score</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A201</td>
+                    <td>Intro to Political Science</td>
+                    <td>95</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>EE234</td>
+                    <td>Law</td>
+                    <td>88</td>
+                    <td>B+</td>
+                </tr>
+                <tr>
+                    <td>SE355</td>
+                    <td>Mathematics 1</td>
+                    <td>91</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>EC220</td>
+                    <td>Macro Economics</td>
+                    <td>85</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>ST101</td>
+                    <td>Statistics 1</td>
+                    <td>92</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>CS140</td>
+                    <td>Social Science Computing</td>
+                    <td>89</td>
+                    <td>B+</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- GPA Section -->
+        <div class="gpa">
+            <p><strong>Cumulative GPA:</strong> 3.68 - Excellent</p>
+            <p><strong>Last Term GPA:</strong> 3.75 - Excellent</p>
+        </div>
+
+        <a href="./FEPS CHS.html" class="back-button">Back to Home</a>
+    </main>
+
+    <footer>
+        <p style="color:#191970"><a href="mailto:chs@feps.edu.eg">Contact us: chs@feps.edu.eg</a></p>
+        <p style="color:#191970">© 2024 Faculty of Economics & Political Science (FEPS). All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchSubjects() {
+            const query = document.querySelector('.search-bar input').value.toLowerCase();
+            const rows = document.querySelectorAll('.subjects-table tbody tr');
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+
+        document.querySelector('.search-bar input').addEventListener('input', searchSubjects);
+    </script>
+</body>
+</html>

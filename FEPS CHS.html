@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faculty of Economics and Political Science Credit Hour System">
+    <meta name="keywords" content="FEPS CHS">
+    <title>FEPS CHS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            border: 2px solid #FF8C00;
+            border-radius: 12px;
+            background-color: #B0C4DE;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #B0C4DE;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #191970;
+            text-decoration: none;
+        }
+         .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px;
+            margin: 20px;
+        }
+        .services-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            width: 90%; 
+            height: 150px; 
+            background-color: lightgray;
+            border: 2px solid #FF8C00;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center; /* Center-aligns text */
+        }
+        .services-item img {
+            max-width: 50%;
+            max-height: 50%; 
+            margin-bottom: 8px;
+            border-radius: 10px; 
+        }
+        .services-item:hover {
+            background-color: #B0C4DE;
+            transform: scale(1.03);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        }
+        body[lang="ar"] {
+            direction: rtl;
+            text-align: right;
+        }
+
+        #read-aloud-button {
+            background-color: #FF8C00;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #read-aloud-button:hover {
+            background-color: #FF7F00;
+            transform: scale(1.03);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+.search-bar {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: 2px solid #FF8C00;
+        border-radius: 25px;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar input:focus {
+        border-color: #FF7F00;
+        box-shadow: 0 0 10px rgba(255, 127, 0, 0.5);
+    }
+
+    .search-bar input::placeholder {
+        color: #888;
+    }
+
+    .search-bar input[type="text"] {
+        padding-left: 35px; 
+    }
+
+    .search-bar .search-icon {
+        position: absolute;
+        left: 10px;
+        font-size: 18px;
+        color: #FF8C00;
+    }
+.language-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            gap: 10px;
+        }
+        .language-selector select {
+            padding: 5px 10px;
+            font-size: 16px;
+            border: 2px solid #FF8C00;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #191970;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .language-selector select:hover {
+            box-shadow: 0 0 5px rgba(255, 127, 0, 0.5);
+        }
+        .language-selector select:focus {
+            border-color: #FF7F00;
+            box-shadow: 0 0 8px rgba(255, 127, 0, 0.7);
+        }
+        .language-selector label {
+            font-size: 16px;
+            color: #191970;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body lang="en">
+    <header>
+        <img src="./feps-.png" width="200">
+        <h1 id="title" style="color:#191970">Faculty of Economics and Political Science Students</h1>
+        <h2 id="subtitle" style="color:#191970"><b>Credit Hour System</b></h2>
+        <div class="search-bar">
+    <span class="search-icon">&#128269;</span> 
+    <input type="text" placeholder="Search for services...">
+</div>
+
+<form class="language-selector">
+            <label for="cnt">🌐 Choose Language:</label>
+            <select name="Language" id="cnt" onchange="changeLanguage()">
+                <option value="ar">Arabic</option>
+                <option value="en" selected>English</option>
+            </select>
+        </form>
+        <nav>
+            <ul>
+                <li><a id="nav-classwork" href="./classwork.html">Classwork</a></li>
+                <li><a id="nav-fees" href="./Fees.html">Fees</a></li>
+                <li><a id="nav-lectures-schedule" href="schedule">Lectures</a></li>
+            </ul>
+        </nav>
+
+    </header>
+<button id="read-aloud-button" disabled><b>Read Aloud</b></button>
+
+    <h2 id="available-services-title" style="color:#191970">Available Services</h2>
+
+   <div class="services">
+<!-- FEPS Website -->
+    <a href="http://www.feps.edu.eg/arr/#" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="services-item" id="service-feps">
+            <img src="./fepswebsite.png">
+            <h2 style="color:#191970"><b> Faculty Main Website</b></h2>
+        </div>
+    </a>
+
+    <!-- Student Affairs -->
+    <a href="https://ckes.cu.edu.eg/feps.aspx" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="services-item" id="service-affairs">
+                <img src="./sa.png">
+                <h2 style="color:#191970"><b>Student Affairs</b></h2>
+            </div>
+        </a>
+    <!-- SRS -->
+    <div class="services-item" id="service-Student-Record-System">
+            <img src="./registration-3.png">
+            <h2 style="color:#191970"><b>Student Record System</b></h2>
+        </div>
+         <!-- lectures schedule -->
+    <div class="services-item" id="service-lectures-schedule">
+            <img src="./ss.png">
+            <h2 style="color:#191970"><b>Lectures Schedule</b></h2>
+        </div>
+
+     <!-- exams schedule -->
+<a href="./SE.html" style="text-decoration: none; color: inherit;">
+<div class="services-item" id="service-exams-schedule">
+    <img src="./ss.png">
+    <h2 style="color:#191970"><b>Exams Schedule</b></h2>
+</div>
+</a>
+
+    <!-- Classwork -->
+    <a href="./classwork.html" style="text-decoration: none; color: inherit;">
+        <div class="services-item" id="service-ClassWork">
+            <img src="./classwrk.png">
+            <h2 style="color:#191970"><b>Class Work</b></h2>
+        </div>
+    </a>
+
+    <!-- Certificates -->
+    <a href="./Grades.html" style="text-decoration: none; color: inherit;">
+    <div class="services-item" id="service-grades">
+        <img src="./certificate.png">
+        <h2 style="color:#191970"><b>Certificates of Appreciation</b></h2>
+    </div>
+</a>
+    <!-- Student Hub -->
+    <a href="https://sso.eetest.online/studenthome?view=dashboard" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="services-item" id="service-hub">
+            <img src="./thinqi.png">
+            <h2 style="color:#191970"><b>Student Hub</b></h2>
+        </div>
+    </a>
+
+    <!-- University Fees -->
+    <a href="./Fees.html" style="text-decoration: none; color: inherit;">
+        <div class="services-item" id="service-fees">
+            <img src="./fees.png">
+            <h2 style="color:#191970"><b>University Fees</b></h2>
+        </div>
+    </a>
+
+    <!-- Tutorial -->
+    <div class="services-item" id="service-Tutorial">
+        <img src="./tutorial.png">
+        <h2 style="color:#191970"><b>Tutorial for making the schedule</b></h2>
+    </div>
+
+    <!-- Library -->
+    <a href="http://www.feps.edu.eg/enn/library/index.php" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="services-item" id="service-library">
+            <img src="./library.png">
+            <h2 style="color:#191970"><b>FEPS Library</b></h2>
+        </div>
+    </a>
+    
+
+<!-- GPA Calculator -->
+   <a href="https://daafoor.com/gpacalculater/24-Cairo-University" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="services-item" id="service-gpa">
+            <img src="./gpa-calculator.png">
+            <h2 style="color:#191970"><b>GPA Calculator</b></h2>
+        </div>
+    </a>
+
+<!-- F&Q -->
+   <a href="./F&Q.html" style="text-decoration: none; color: inherit;">
+        <div class="services-item" id="service-f&q">
+            <img src="./fq.png">
+            <h2 style="color:#191970"><b>F&Q</b></h2>
+        </div>
+    </a>
+<!-- feedback -->
+    <a href="./feedback.html" style="text-decoration: none; color: inherit;">
+        <div class="services-item" id="service-feedback">
+            <img src="./feedback.png">
+            <h2 style="color:#191970"><b>Your Feedback</b></h2>
+        </div>
+    </a>
+ </div class="services">
+  <footer>
+        <p style="color:#191970"><a href="mailto:chs@feps.edu.eg" id="contact-us">Contact us: chs@feps.edu.eg</a></p>
+        <p style="color:#191970" id="footer-text">© 2024 Faculty of Economics & Political Science (FEPS). All rights reserved.</p>
+  </footer>
+
+ <script>
+        function searchServices() {
+            const query = document.querySelector('.search-bar input').value.toLowerCase();
+            const services = document.querySelectorAll('.services-item');
+
+            services.forEach(service => {
+                const text = service.textContent.toLowerCase();
+                service.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+
+        document.querySelector('.search-bar input').addEventListener('input', searchServices);
+    </script>
+
+    <script>
+        const translations = {
+    ar: {
+        title: "كلية الاقتصاد والعلوم السياسية - نظام الساعات المعتمدة",
+        subtitle: "نظام الساعات المعتمدة",
+        availableServicesTitle: "الخدمات المتاحة",
+        serviceAffairs: "شؤون الطلاب",
+        serviceSRS: "نظام السجلات الطلابية",
+        serviceLecturesSchedule: "جدول مواعيد المحاضرات",
+        serviceExamsSchedule: "جدول مواعيد الامتحانات",
+        serviceClasswork: "اعمال الفصل",
+        serviceGrades: "شهادات التقدير",
+        serviceHub: "المركز الطلابي",
+        serviceFees: "الرسوم الجامعية",
+        serviceTutorial: "طريقة إنشاء الجدول",
+        serviceLibrary: "مكتبة كلية الاقتصاد والعلوم السياسية",
+        contactUs: "اتصل بنا: chs@feps.edu.eg",
+        footer: "© 2024 كلية الاقتصاد والعلوم السياسية (FEPS). جميع الحقوق محفوظة.",
+        readaloud: "القراءة بصوت عالي",
+        servicefeedback: "ملاحظاتك",
+        servicefq: "سؤال وجواب",
+        servicegpa: "حاسبة المعدل التراكمي",
+        servicefeps: "الموقع الرئيسي للكلية"  // <-- Added missing comma here
+    },
+    en: {
+        title: "Faculty of Economics and Political Science Students",
+        subtitle: "Credit Hour System",
+        availableServicesTitle: "Available Services",
+        serviceAffairs: "Student Affairs",
+        serviceSRS: "Student Record System",
+        serviceLecturesSchedule: "Lectures Schedule",
+        serviceExamsSchedule: "Exams Schedule",
+        serviceClasswork: "Class Work",
+        serviceGrades: "Certificates of Appreciation",
+        serviceHub: "Student Hub",
+        serviceFees: "University Fees",
+        serviceTutorial: "Tutorial for making the schedule",
+        serviceLibrary: "FEPS Library",
+        contactUs: "Contact us: chs@feps.edu.eg",
+        footer: "© 2024 Faculty of Economics & Political Science (FEPS). All rights reserved.",
+        readaloud: "Read Aloud",
+        servicefeedback: "Your Feedback",
+        servicefq: "F&Q",
+        servicegpa: "GPA Calculator",
+        servicefeps: "Faculty Main Website"
+    }
+};
+
+
+        function changeLanguage() {
+            const lang = document.getElementById("cnt").value;
+            document.body.lang = lang;
+
+            // Update all elements with ids in the translation object
+            document.getElementById("title").textContent = translations[lang].title;
+            document.getElementById("subtitle").textContent = translations[lang].subtitle;
+            document.getElementById("read-aloud-button").textContent = translations[lang].readaloud;
+            document.getElementById("available-services-title").textContent = translations[lang].availableServicesTitle;
+            document.getElementById("service-feps").querySelector("h2").textContent = translations[lang].servicefeps;
+            document.getElementById("service-affairs").querySelector("h2").textContent = translations[lang].serviceAffairs;
+            document.getElementById("service-Student-Record-System").querySelector("h2").textContent = translations[lang].serviceSRS;
+            document.getElementById("service-lectures-schedule").querySelector("h2").textContent = translations[lang].serviceLecturesSchedule;
+            document.getElementById("service-exams-schedule").querySelector("h2").textContent = translations[lang].serviceExamsSchedule;
+            document.getElementById("service-ClassWork").querySelector("h2").textContent = translations[lang].serviceClasswork;
+            document.getElementById("service-grades").querySelector("h2").textContent = translations[lang].serviceGrades;
+            document.getElementById("service-hub").querySelector("h2").textContent = translations[lang].serviceHub;
+            document.getElementById("service-fees").querySelector("h2").textContent = translations[lang].serviceFees;
+            document.getElementById("service-Tutorial").querySelector("h2").textContent = translations[lang].serviceTutorial;
+            document.getElementById("service-library").querySelector("h2").textContent = translations[lang].serviceLibrary;
+            document.getElementById("service-feedback").querySelector("h2").textContent = translations[lang].servicefeedback;
+            document.getElementById("service-f&q").querySelector("h2").textContent = translations[lang].servicefq;
+            document.getElementById("service-gpa").querySelector("h2").textContent = translations[lang].servicegpa;
+            document.getElementById("contact-us").textContent = translations[lang].contactUs;
+            document.getElementById("footer-text").textContent = translations[lang].footer;
+        }
+
+    </script>
+ <script src="//code.tidio.co/sb2s3mkmximv60ffdyrlg8kt7rymxdh2.js" async></script>
+</body>
+</html>

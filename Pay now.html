@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 40%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .credit-button {
+            background-color: #2b08c6;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .fawry-button {
+            background-color: #f6d900;
+            color: white;
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment Method</h2>
+        <form id="creditPaymentForm">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber">
+
+            <label for="cardName">Cardholder Name</label>
+            <input type="text" id="cardName" name="cardName">
+
+            <label for="expiryDate">Expiry Date</label>
+            <input type="month" id="expiryDate" name="expiryDate">
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv">
+
+            <button type="submit" class="credit-button">Pay by Credit Card</button>
+        </form>
+         <button class="fawry-button"><a href="https://www.fawry.com/consumer/bill-payment/" target="_blank">Pay by Fawry</a></button>
+    </div>
+</body>
+</html>

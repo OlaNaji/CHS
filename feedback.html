@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FEPS Credit Hour System Feedback Page">
+    <meta name="keywords" content="FEPS, Feedback, Credit Hour System">
+    <title>Feedback - FEPS CHS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            border: 2px solid #FF8C00;
+            border-radius: 12px;
+            background-color: #B0C4DE;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        form input, form textarea, form select, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        form button {
+            background-color: #191970;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #2C3E50;
+        }
+        
+    </style>
+</head>
+<body>
+<body lang="en">
+    <header>
+        <h1 style="color:#191970">Feedback</h1>
+    </header>
+
+    <form id="feedbackForm" action="javascript:void(0);" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" name="email" placeholder="Enter your email address" required>
+
+        <label for="feedback-type">Feedback Type</label>
+        <select id="feedback-type" name="feedback_type" required>
+            <option value="general">General Feedback</option>
+            <option value="issue">Report an Issue</option>
+            <option value="suggestion">Suggestion</option>
+        </select>
+
+        <label for="message">Your Feedback</label>
+        <textarea name="message" placeholder="Enter your feedback here..." required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <footer>
+        <p style="color:#191970"><a href="mailto:chs@feps.edu.eg" id="contact-us">Contact us: chs@feps.edu.eg</a></p>
+        <p style="color:#191970" id="footer-text">© 2024 Faculty of Economics & Political Science (FEPS). All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
